@@ -5,7 +5,6 @@ module alu (
     Result,
     Flags
 );
-  reg _sv2v_0;
   input wire [31:0] a;
   input wire [31:0] b;
   input wire [1:0] ALUControl;
@@ -20,7 +19,6 @@ module alu (
   assign condinvb = (ALUControl[0] ? ~b : b);
   assign sum = (a + condinvb) + ALUControl[0];
   always @(*) begin
-    if (_sv2v_0);
     casex (ALUControl[1:0])
       2'b0z: Result = sum;
       2'b10: Result = a & b;
@@ -32,5 +30,4 @@ module alu (
   assign carry = (ALUControl[1] == 1'b0) & sum[32];
   assign overflow = ((ALUControl[1] == 1'b0) & ~((a[31] ^ b[31]) ^ ALUControl[0])) & (a[31] ^ sum[31]);
   assign Flags = {neg, zero, carry, overflow};
-  initial _sv2v_0 = 0;
 endmodule

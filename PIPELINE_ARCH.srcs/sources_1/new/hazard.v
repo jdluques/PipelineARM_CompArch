@@ -19,7 +19,6 @@ module hazard (
     FlushD,
     FlushE
 );
-  reg _sv2v_0;
   input wire clk;
   input wire reset;
   input wire Match_1E_M;
@@ -41,7 +40,6 @@ module hazard (
   output wire FlushE;
   wire ldrStallD;
   always @(*) begin
-    if (_sv2v_0);
     if (Match_1E_M & RegWriteM) ForwardAE = 2'b10;
     else if (Match_1E_W & RegWriteW) ForwardAE = 2'b01;
     else ForwardAE = 2'b00;
@@ -54,5 +52,4 @@ module hazard (
   assign StallF = ldrStallD | PCWrPendingF;
   assign FlushE = ldrStallD | BranchTakenE;
   assign FlushD = (PCWrPendingF | PCSrcW) | BranchTakenE;
-  initial _sv2v_0 = 0;
 endmodule
