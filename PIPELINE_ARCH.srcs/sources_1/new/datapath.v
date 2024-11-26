@@ -25,7 +25,8 @@ module datapath (
     ForwardBE,
     StallF,
     StallD,
-    FlushD
+    FlushD,
+    shE
 );
   input wire clk;
   input wire reset;
@@ -54,6 +55,7 @@ module datapath (
   input wire StallF;
   input wire StallD;
   input wire FlushD;
+  input wire shE;
   wire [31:0] PCPlus4F;
   wire [31:0] PCnext1F;
   wire [31:0] PCnextF;
@@ -80,6 +82,12 @@ module datapath (
   wire [3:0] WA3W;
   wire Match_1D_E;
   wire Match_2D_E;
+  //-----------------------------//
+  wire [6:0] paquete;
+  wire [31:0] res;
+  wire [31:0] ALUresultF;
+  //-----------------------------//
+
   mux2 #(
       .WIDTH(32)
   ) pcnextmux (
@@ -204,6 +212,25 @@ module datapath (
       .q(RA2E)
   );
   
+//-----------------------------//
+    flopr #(
+      .WIDTH(7)
+    ) shifting (
+      .clk(clk),
+      .reset(reset),
+      .d(InstrF[11:5]),
+      .q(paquete)
+  );
+    
+    Shift sh
+    (
+      .RS(rd1E),
+      .RM(rd2E),
+      .paquete(paquete),
+      .res(res)
+    );
+    
+//-----------------------------//
   mux3 #(
       .WIDTH(32)
   ) byp1mux (
@@ -216,7 +243,7 @@ module datapath (
   mux3 #(
       .WIDTH(32)
   ) byp2mux (
-      .d0(rd2E),
+      .d0(res),
       .d1(ResultW),
       .d2(ALUOutM),
       .s (ForwardBE),
@@ -230,6 +257,7 @@ module datapath (
       .s (ALUSrcE),
       .y (SrcBE)
   );
+
   alu alu (
       .a(SrcAE),
       .b(SrcBE),
@@ -237,12 +265,26 @@ module datapath (
       .Result(ALUResultE),
       .Flags(ALUFlagsE)
   );
+
+//-----------------------------//
+    mux2 #(
+      .WIDTH(32)
+  ) muxSH (
+      .d0(ALUResultE),
+      .d1(SrcBE),
+      .s (shE),
+      .y (ALUresultF)
+  );
+//-----------------------------//
+  
   flopr #(
       .WIDTH(32)
   ) aluresreg (
       .clk(clk),
       .reset(reset),
-      .d(ALUResultE),
+//-----------------------------//
+      .d(ALUresultF),
+//-----------------------------//
       .q(ALUOutM)
   );
   flopr #(

@@ -40,10 +40,13 @@ module arm (
   wire Match_2E_M;
   wire Match_2E_W;
   wire Match_12D_E;
+  //-----------------------------//
+  wire shE;
+  //-----------------------------//
   controller c (
       .clk(clk),
       .reset(reset),
-      .InstrD(InstrD[31:12]),
+      .InstrD(InstrD),
       .ALUFlagsE(ALUFlagsE),
       .RegSrcD(RegSrcD),
       .ImmSrcD(ImmSrcD),
@@ -57,7 +60,10 @@ module arm (
       .RegWriteM(RegWriteM),
       .MemtoRegE(MemtoRegE),
       .PCWrPendingF(PCWrPendingF),
-      .FlushE(FlushE)
+      .FlushE(FlushE),
+//-----------------------------//
+      .shE(shE)
+//-----------------------------//
   );
   datapath dp (
       .clk(clk),
@@ -86,7 +92,8 @@ module arm (
       .ForwardBE(ForwardBE),
       .StallF(StallF),
       .StallD(StallD),
-      .FlushD(FlushD)
+      .FlushD(FlushD),
+      .shE(shE)
   );
   hazard h (
       .clk(clk),

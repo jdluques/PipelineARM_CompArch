@@ -15,11 +15,13 @@ module controller (
     RegWriteM,
     MemtoRegE,
     PCWrPendingF,
-    FlushE
+    FlushE,
+    shE
 );
+  reg _sv2v_0;
   input wire clk;
   input wire reset;
-  input wire [31:12] InstrD;
+  input wire [31:0] InstrD;
   input wire [3:0] ALUFlagsE;
   output wire [1:0] RegSrcD;
   output wire [1:0] ImmSrcD;
@@ -34,7 +36,7 @@ module controller (
   output wire MemtoRegE;
   output wire PCWrPendingF;
   input wire FlushE;
-  reg [9:0] controlsD;
+  reg [10:0] controlsD;
   wire CondExE;
   wire ALUOpD;
   reg [1:0] ALUControlD;
@@ -57,18 +59,26 @@ module controller (
   wire [3:0] FlagsE;
   wire [3:0] FlagsNextE;
   wire [3:0] CondE;
+  //-----------------------------//
+  wire sh;
+  output wire shE;
+  //-----------------------------//
   always @(*) begin
+    if (_sv2v_0);
     casex (InstrD[27:26])
-      2'b00:   if (InstrD[25]) controlsD = 10'b0000101001;
- else controlsD = 10'b0000001001;
-      2'b01:   if (InstrD[20]) controlsD = 10'b0001111000;
- else controlsD = 10'b1001110100;
-      2'b10:   controlsD = 10'b0110100010;
-      default: controlsD = 10'bxxxxxxxxxx;
+      2'b00:
+        if (InstrD[25]) controlsD = 11'b00001010010;
+        else if (InstrD[25]== 0 & InstrD[24:21] == 4'b1101) controlsD = 11'b0000001001;
+        else controlsD = 11'b0000001000;
+      2'b01:   if (InstrD[20]) controlsD = 11'b0001111000;
+    else controlsD = 11'b10011101000;
+      2'b10:   controlsD = 11'b01101000100;
+      default: controlsD = 11'bxxxxxxxxxxx;
     endcase
   end
-  assign {RegSrcD, ImmSrcD, ALUSrcD, MemtoRegD, RegWriteD, MemWriteD, BranchD, ALUOpD} = controlsD;
+  assign {RegSrcD, ImmSrcD, ALUSrcD, MemtoRegD, RegWriteD, MemWriteD, BranchD, ALUOpD, sh} = controlsD;
   always @(*) begin
+    if (_sv2v_0);
     if (ALUOpD) begin
       case (InstrD[24:21])
         4'b0100: ALUControlD = 2'b00;
@@ -86,13 +96,13 @@ module controller (
   end
   assign PCSrcD = ((InstrD[15:12] == 4'b1111) & RegWriteD) | BranchD;
   floprc #(
-      .WIDTH(7)
+      .WIDTH(8)
   ) flushedregsE (
       .clk(clk),
       .reset(reset),
       .clear(FlushE),
-      .d({FlagWriteD, BranchD, MemWriteD, RegWriteD, PCSrcD, MemtoRegD}),
-      .q({FlagWriteE, BranchE, MemWriteE, RegWriteE, PCSrcE, MemtoRegE})
+      .d({FlagWriteD, BranchD, MemWriteD, RegWriteD, PCSrcD, MemtoRegD, sh}),
+      .q({FlagWriteE, BranchE, MemWriteE, RegWriteE, PCSrcE, MemtoRegE, shE})
   );
   flopr #(
       .WIDTH(3)
@@ -148,4 +158,5 @@ module controller (
       .q({MemtoRegW, RegWriteW, PCSrcW})
   );
   assign PCWrPendingF = (PCSrcD | PCSrcE) | PCSrcM;
+  initial _sv2v_0 = 0;
 endmodule
