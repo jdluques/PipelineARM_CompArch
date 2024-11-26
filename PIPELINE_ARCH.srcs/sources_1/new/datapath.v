@@ -203,6 +203,7 @@ module datapath (
       .d(RA2D),
       .q(RA2E)
   );
+  
   mux3 #(
       .WIDTH(32)
   ) byp1mux (
