@@ -26,7 +26,7 @@ module alu (
     endcase
   end
   assign neg = Result[31];
-  assign zero = Result == 32'b00000000000000000000000000000000;
+  assign zero = (Result == 32'b0);
   assign carry = (ALUControl[1] == 1'b0) & sum[32];
   assign overflow = ((ALUControl[1] == 1'b0) & ~((a[31] ^ b[31]) ^ ALUControl[0])) & (a[31] ^ sum[31]);
   assign Flags = {neg, zero, carry, overflow};
