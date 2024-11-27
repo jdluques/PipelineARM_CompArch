@@ -83,7 +83,7 @@ module datapath (
   wire Match_1D_E;
   wire Match_2D_E;
   //-----------------------------//
-  wire [6:0] paquete;
+  wire [7:0] paquete;
   wire [31:0] res;
   wire [31:0] ALUresultF;
   //-----------------------------//
@@ -214,11 +214,11 @@ module datapath (
   
 //-----------------------------//
     flopr #(
-      .WIDTH(7)
+      .WIDTH(8)
     ) shifting (
       .clk(clk),
       .reset(reset),
-      .d(InstrF[11:5]),
+      .d(InstrF[11:4]),
       .q(paquete)
   );
     
