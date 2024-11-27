@@ -18,7 +18,6 @@ module controller (
     FlushE,
     shE
 );
-  reg _sv2v_0;
   input wire clk;
   input wire reset;
   input wire [31:0] InstrD;
@@ -59,26 +58,23 @@ module controller (
   wire [3:0] FlagsE;
   wire [3:0] FlagsNextE;
   wire [3:0] CondE;
-  //-----------------------------//
+// shift  //
   wire sh;
   output wire shE;
-  //-----------------------------//
+
   always @(*) begin
-    if (_sv2v_0);
     casex (InstrD[27:26])
-      2'b00:
-        if (InstrD[25]) controlsD = 11'b00001010010;
-        else if (InstrD[25]== 0 & InstrD[24:21] == 4'b1101) controlsD = 11'b0000001001;
-        else controlsD = 11'b0000001000;
-      2'b01:   if (InstrD[20]) controlsD = 11'b0001111000;
-    else controlsD = 11'b10011101000;
+      2'b00:  if (InstrD[25]) controlsD = 11'b00001010010;
+              else if (InstrD[25] == 0 & InstrD[24:21] == 1110 ) controlsD = 11'b00001010011;
+              else controlsD = 11'b00000010010;
+      2'b01:  if (InstrD[20]) controlsD = 11'b00011110000;
+              else controlsD = 11'b10011101000;
       2'b10:   controlsD = 11'b01101000100;
       default: controlsD = 11'bxxxxxxxxxxx;
     endcase
   end
   assign {RegSrcD, ImmSrcD, ALUSrcD, MemtoRegD, RegWriteD, MemWriteD, BranchD, ALUOpD, sh} = controlsD;
   always @(*) begin
-    if (_sv2v_0);
     if (ALUOpD) begin
       case (InstrD[24:21])
         4'b0100: ALUControlD = 2'b00;
@@ -158,5 +154,4 @@ module controller (
       .q({MemtoRegW, RegWriteW, PCSrcW})
   );
   assign PCWrPendingF = (PCSrcD | PCSrcE) | PCSrcM;
-  initial _sv2v_0 = 0;
 endmodule
