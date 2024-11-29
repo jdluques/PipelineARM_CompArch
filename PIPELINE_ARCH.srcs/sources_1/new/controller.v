@@ -18,75 +18,80 @@ module controller (
     FlushE,
     shE
 );
-  input wire clk;
-  input wire reset;
-  input wire [31:0] InstrD;
-  input wire [3:0] ALUFlagsE;
-  output wire [1:0] RegSrcD;
-  output wire [1:0] ImmSrcD;
-  output wire ALUSrcE;
-  output wire BranchTakenE;
-  output wire [1:0] ALUControlE;
-  output wire MemWriteM;
-  output wire MemtoRegW;
-  output wire PCSrcW;
-  output wire RegWriteW;
-  output wire RegWriteM;
-  output wire MemtoRegE;
-  output wire PCWrPendingF;
-  input wire FlushE;
-  reg [10:0] controlsD;
-  wire CondExE;
-  wire ALUOpD;
-  reg [1:0] ALUControlD;
-  wire ALUSrcD;
-  wire MemtoRegD;
-  wire MemtoRegM;
-  wire RegWriteD;
-  wire RegWriteE;
-  wire RegWriteGatedE;
-  wire MemWriteD;
-  wire MemWriteE;
-  wire MemWriteGatedE;
-  wire BranchD;
-  wire BranchE;
-  reg [1:0] FlagWriteD;
-  wire [1:0] FlagWriteE;
-  wire PCSrcD;
-  wire PCSrcE;
-  wire PCSrcM;
-  wire [3:0] FlagsE;
-  wire [3:0] FlagsNextE;
-  wire [3:0] CondE;
+input wire clk;
+input wire reset;
+input wire [31:0] InstrD;
+input wire [3:0] ALUFlagsE;
+output wire [1:0] RegSrcD;
+output wire [1:0] ImmSrcD;
+output wire ALUSrcE;
+output wire BranchTakenE;
+output wire [4:0] ALUControlE;
+output wire MemWriteM;
+output wire MemtoRegW;
+output wire PCSrcW;
+output wire RegWriteW;
+output wire RegWriteM;
+output wire MemtoRegE;
+output wire PCWrPendingF;
+input wire FlushE;
+reg [10:0] controlsD;
+wire CondExE;
+wire ALUOpD;
+reg [4:0] ALUControlD;
+wire ALUSrcD;
+wire MemtoRegD;
+wire MemtoRegM;
+wire RegWriteD;
+wire RegWriteE;
+wire RegWriteGatedE;
+wire MemWriteD;
+wire MemWriteE;
+wire MemWriteGatedE;
+wire BranchD;
+wire BranchE;
+reg [1:0] FlagWriteD;
+wire [1:0] FlagWriteE;
+wire PCSrcD;
+wire PCSrcE;
+wire PCSrcM;
+wire [3:0] FlagsE;
+wire [3:0] FlagsNextE;
+wire [3:0] CondE;
 // shift  //
-  wire sh;
-  output wire shE;
+wire sh;
+output wire shE;
 
   always @(*) begin
-    casex (InstrD[27:26])
-      2'b00:  if (InstrD[25]) controlsD = 11'b00001010010;
-              else if (InstrD[25] == 0 & InstrD[24:21] == 1110 ) controlsD = 11'b00001010011;
-              else controlsD = 11'b00000010010;
-      2'b01:  if (InstrD[20]) controlsD = 11'b00011110000;
-              else controlsD = 11'b10011101000;
-      2'b10:   controlsD = 11'b01101000100;
-      default: controlsD = 11'bxxxxxxxxxxx;
-    endcase
+  casex (InstrD[27:26])
+    2'b00:
+      case (InstrD[25])
+        1'b1: controlsD = 11'b00001010010;
+        1'b0: 
+          if (InstrD[24:21] == 4'b1101 ) controlsD = 11'b00000010011;
+          else controlsD = 11'b00000010010;
+      endcase
+    2'b01:  if (InstrD[20]) controlsD = 11'b00011110000;
+            else controlsD = 11'b10011101000;
+    2'b10:   controlsD = 11'b01101000100;
+    default: controlsD = 11'bxxxxxxxxxxx;
+  endcase
   end
   assign {RegSrcD, ImmSrcD, ALUSrcD, MemtoRegD, RegWriteD, MemWriteD, BranchD, ALUOpD, sh} = controlsD;
   always @(*) begin
     if (ALUOpD) begin
       case (InstrD[24:21])
-        4'b0100: ALUControlD = 2'b00;
-        4'b0010: ALUControlD = 2'b01;
-        4'b0000: ALUControlD = 2'b10;
-        4'b1100: ALUControlD = 2'b11;
-        default: ALUControlD = 2'bxx;
+        4'b0100: ALUControlD = 5'b00000;
+        4'b0010: ALUControlD = 5'b00001;
+        4'b0000: ALUControlD = 5'b00010;
+        4'b1100: ALUControlD = 5'b00011;
+        4'b1101: ALUControlD = 5'b00100;
+        default: ALUControlD = 5'bxxxxx;
       endcase
       FlagWriteD[1] = InstrD[20];
-      FlagWriteD[0] = InstrD[20] & ((ALUControlD == 2'b00) | (ALUControlD == 2'b01));
+      FlagWriteD[0] = InstrD[20] & ((ALUControlD == 5'b00000) | (ALUControlD == 5'b00001));
     end else begin
-      ALUControlD = 2'b00;
+      ALUControlD = 5'b00000;
       FlagWriteD  = 2'b00;
     end
   end
@@ -101,7 +106,7 @@ module controller (
       .q({FlagWriteE, BranchE, MemWriteE, RegWriteE, PCSrcE, MemtoRegE, shE})
   );
   flopr #(
-      .WIDTH(3)
+      .WIDTH(6)
   ) regsE (
       .clk(clk),
       .reset(reset),

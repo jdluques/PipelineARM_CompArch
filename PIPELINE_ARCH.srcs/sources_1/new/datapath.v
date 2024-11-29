@@ -35,7 +35,7 @@ input wire [1:0] RegSrcD;
 input wire [1:0] ImmSrcD;
 input wire ALUSrcE;
 input wire BranchTakenE;
-input wire [1:0] ALUControlE;
+input wire [4:0] ALUControlE;
 input wire MemtoRegW;
 input wire PCSrcW;
 input wire RegWriteW;
@@ -91,6 +91,19 @@ wire [31:0] res;
 wire [31:0] SHres;
 input wire sh;
 //--------------------------//
+//          Branch          //
+wire point;
+//--------------------------//
+//     BranchPredictor      //
+branchP brain (
+        .clk(clk),
+        .rst(reset),
+        .BTE(BranchTakenE),
+        .point(point)
+    );
+
+//--------------------------//
+
     mux2 #(
         .WIDTH(32)
     ) pcnextmux (
@@ -104,7 +117,7 @@ input wire sh;
     ) branchmux (
         .d0(PCnext1F),
         .d1(ALUResultE),
-        .s (BranchTakenE),
+        .s (point),
         .y (PCnextF)
     );
     flopenr #(
@@ -156,6 +169,7 @@ input wire sh;
         .ra1(RA1D),
         .ra2(RA2D),
         .wa3(WA3W),
+        //.ra4(InstrD[11:8]),
         .wd3(ResultW),
         .r15(PCPlus8D),
         .rd1(rd1D),
@@ -166,6 +180,7 @@ input wire sh;
         .ImmSrc(ImmSrcD),
         .ExtImm(ExtImmD)
     );
+    //---------------------------//
     //-----FlopsActualizados-----//
     floprc #(.WIDTH(32)) 
     rd1reg (
@@ -199,6 +214,8 @@ input wire sh;
         .d(InstrD[11:4]),
         .q(paquete)
     );
+    //--------------------------//
+
     //--------------------------//
     floprc #(
         .WIDTH(4)
@@ -264,8 +281,8 @@ input wire sh;
     //--------------------------//
     //          shift           //
     shift shi (
-        .RS(rd2E),
-        .RM(rd1E),
+        .RS(rd1E),
+        .RM(rd2E),
         .paquete(paquete),
         .res(res) 
     );

@@ -19,7 +19,7 @@ module arm (
   input wire [31:0] ReadDataM;
   wire [1:0] RegSrcD;
   wire [1:0] ImmSrcD;
-  wire [1:0] ALUControlE;
+  wire [4:0] ALUControlE;
   wire ALUSrcE;
   wire BranchTakenE;
   wire MemtoRegW;

@@ -11,6 +11,7 @@ module shift (
     assign sh = paquete[2:1];
     assign shamt5 = paquete[7:3];
     assign rs = paquete[0];
+    assign extSHAMT5 = {27'b0, shamt5};
     always @(*) begin
         case(rs) 
             1'b1: begin
@@ -23,10 +24,10 @@ module shift (
             end
             1'b0: begin
                 case (sh[1:0])
-                    2'b00: res = RM << shamt5;    // LSL
-                    2'b01: res = RM >> shamt5;    // LSR
-                    2'b10: res = RM >>> shamt5;   // ASR
-                    2'b11: res = (RM >> shamt5) | (RM << (32 - shamt5)); // ROR
+                    2'b00: res = RM << extSHAMT5;    // LSL
+                    2'b01: res = RM >> extSHAMT5;    // LSR
+                    2'b10: res = RM >>> extSHAMT5;   // ASR
+                    2'b11: res = (RM >> extSHAMT5) | (RM << (32 - extSHAMT5)); // ROR
                 endcase
             end
             default: res = 32'b0; // Valor por defecto si `rs` no coincide
