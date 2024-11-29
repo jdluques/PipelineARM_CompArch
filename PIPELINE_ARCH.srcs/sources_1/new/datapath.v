@@ -25,7 +25,9 @@ module datapath (
     ForwardBE,
     StallF,
     StallD,
-    FlushD
+    FlushD,
+    FlushE,
+    sh
 );
   input wire clk;
   input wire reset;
@@ -33,7 +35,7 @@ module datapath (
   input wire [1:0] ImmSrcD;
   input wire ALUSrcE;
   input wire BranchTakenE;
-  input wire [1:0] ALUControlE;
+  input wire [4:0] ALUControlE;
   input wire MemtoRegW;
   input wire PCSrcW;
   input wire RegWriteW;
@@ -80,6 +82,28 @@ module datapath (
   wire [3:0] WA3W;
   wire Match_1D_E;
   wire Match_2D_E;
+  //--------------------------//
+  input wire FlushE;
+  //--------------------------//
+  //          Shift           //
+  wire [ 7:0] paquete;
+  wire [31:0] res;
+  wire [31:0] SHres;
+  input wire sh;
+  //--------------------------//
+  //          Branch          //
+  wire point;
+  //--------------------------//
+  //     BranchPredictor      //
+  branchP brain (
+      .clk  (clk),
+      .rst  (reset),
+      .BTE  (BranchTakenE),
+      .point(point)
+  );
+
+  //--------------------------//
+
   mux2 #(
       .WIDTH(32)
   ) pcnextmux (
@@ -93,7 +117,7 @@ module datapath (
   ) branchmux (
       .d0(PCnext1F),
       .d1(ALUResultE),
-      .s (BranchTakenE),
+      .s (point),
       .y (PCnextF)
   );
   flopenr #(
@@ -145,6 +169,7 @@ module datapath (
       .ra1(RA1D),
       .ra2(RA2D),
       .wa3(WA3W),
+      //.ra4(InstrD[11:8]),
       .wd3(ResultW),
       .r15(PCPlus8D),
       .rd1(rd1D),
@@ -155,55 +180,75 @@ module datapath (
       .ImmSrc(ImmSrcD),
       .ExtImm(ExtImmD)
   );
-  flopr #(
+  //---------------------------//
+  //-----FlopsActualizados-----//
+  floprc #(
       .WIDTH(32)
   ) rd1reg (
       .clk(clk),
       .reset(reset),
+      .clear(FlushE),
       .d(rd1D),
       .q(rd1E)
   );
-  flopr #(
+  floprc #(
       .WIDTH(32)
   ) rd2reg (
       .clk(clk),
       .reset(reset),
+      .clear(FlushE),
       .d(rd2D),
       .q(rd2E)
   );
-  flopr #(
+  floprc #(
       .WIDTH(32)
   ) immreg (
       .clk(clk),
       .reset(reset),
+      .clear(FlushE),
       .d(ExtImmD),
       .q(ExtImmE)
   );
-  flopr #(
+  floprc #(
+      .WIDTH(8)
+  ) flopshift (
+      .clk(clk),
+      .reset(reset),
+      .clear(FlushE),
+      .d(InstrD[11:4]),
+      .q(paquete)
+  );
+  //--------------------------//
+
+  //--------------------------//
+  floprc #(
       .WIDTH(4)
   ) wa3ereg (
       .clk(clk),
       .reset(reset),
+      .clear(FlushE),
       .d(InstrD[15:12]),
       .q(WA3E)
   );
-  flopr #(
+  floprc #(
       .WIDTH(4)
   ) ra1reg (
       .clk(clk),
       .reset(reset),
+      .clear(FlushE),
       .d(RA1D),
       .q(RA1E)
   );
-  flopr #(
+  floprc #(
       .WIDTH(4)
   ) ra2reg (
       .clk(clk),
       .reset(reset),
+      .clear(FlushE),
       .d(RA2D),
       .q(RA2E)
   );
-  
+  //---------------------------//
   mux3 #(
       .WIDTH(32)
   ) byp1mux (
@@ -216,7 +261,7 @@ module datapath (
   mux3 #(
       .WIDTH(32)
   ) byp2mux (
-      .d0(rd2E),
+      .d0(SHres),
       .d1(ResultW),
       .d2(ALUOutM),
       .s (ForwardBE),
@@ -237,6 +282,25 @@ module datapath (
       .Result(ALUResultE),
       .Flags(ALUFlagsE)
   );
+  //--------------------------//
+  //          shift           //
+  shift shi (
+      .RS(rd1E),
+      .RM(rd2E),
+      .paquete(paquete),
+      .res(res)
+  );
+  mux2 #(
+      .WIDTH(32)
+  ) shmux (
+      .d0(rd2E),
+      .d1(res),
+      .s (sh),
+      .y (SHres)
+  );
+
+  //--------------------------//
+  //          Memory          //
   flopr #(
       .WIDTH(32)
   ) aluresreg (
@@ -261,6 +325,8 @@ module datapath (
       .d(WA3E),
       .q(WA3M)
   );
+  //----------------------------//
+  //         WriteBack          //
   flopr #(
       .WIDTH(32)
   ) aluoutreg (
@@ -293,6 +359,7 @@ module datapath (
       .s (MemtoRegW),
       .y (ResultW)
   );
+  //----------------------------//
   eqcmp #(
       .WIDTH(4)
   ) m0 (

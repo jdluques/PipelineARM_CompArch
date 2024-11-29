@@ -7,7 +7,7 @@ module alu (
 );
   input wire [31:0] a;
   input wire [31:0] b;
-  input wire [1:0] ALUControl;
+  input wire [4:0] ALUControl;
   output reg [31:0] Result;
   output wire [3:0] Flags;
   wire neg;
@@ -20,9 +20,10 @@ module alu (
   assign sum = (a + condinvb) + ALUControl[0];
   always @(*) begin
     casex (ALUControl[1:0])
-      2'b0z: Result = sum;
-      2'b10: Result = a & b;
-      2'b11: Result = a | b;
+      5'b0000x: Result = sum;
+      5'b00010: Result = a & b;
+      5'b00011: Result = a | b;
+      5'b00100: Result = b;
     endcase
   end
   assign neg = Result[31];
