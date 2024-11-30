@@ -13,7 +13,7 @@ module top (
   wire [31:0] ReadDataM;
   wire slow_clk;
 
-    // Clock divider sencillo
+  // Clock divider sencillo
   reg [31:0] clk_div_counter = 0;
   always @(posedge clk or posedge reset) begin
     if (reset) clk_div_counter <= 0;

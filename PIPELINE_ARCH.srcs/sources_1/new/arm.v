@@ -6,7 +6,8 @@ module arm (
     MemWriteM,
     ALUOutM,
     WriteDataM,
-    ReadDataM
+    ReadDataM,
+    sh
 );
   input wire clk;
   input wire reset;
@@ -18,7 +19,7 @@ module arm (
   input wire [31:0] ReadDataM;
   wire [1:0] RegSrcD;
   wire [1:0] ImmSrcD;
-  wire [1:0] ALUControlE;
+  wire [4:0] ALUControlE;
   wire ALUSrcE;
   wire BranchTakenE;
   wire MemtoRegW;
@@ -40,10 +41,12 @@ module arm (
   wire Match_2E_M;
   wire Match_2E_W;
   wire Match_12D_E;
+  // shif //
+  input wire sh;
   controller c (
       .clk(clk),
       .reset(reset),
-      .InstrD(InstrD[31:12]),
+      .InstrD(InstrD[31:0]),
       .ALUFlagsE(ALUFlagsE),
       .RegSrcD(RegSrcD),
       .ImmSrcD(ImmSrcD),
@@ -57,7 +60,8 @@ module arm (
       .RegWriteM(RegWriteM),
       .MemtoRegE(MemtoRegE),
       .PCWrPendingF(PCWrPendingF),
-      .FlushE(FlushE)
+      .FlushE(FlushE),
+      .shE(sh)
   );
   datapath dp (
       .clk(clk),
@@ -86,7 +90,9 @@ module arm (
       .ForwardBE(ForwardBE),
       .StallF(StallF),
       .StallD(StallD),
-      .FlushD(FlushD)
+      .FlushD(FlushD),
+      .FlushE(FlushE),
+      .sh(sh)
   );
   hazard h (
       .clk(clk),

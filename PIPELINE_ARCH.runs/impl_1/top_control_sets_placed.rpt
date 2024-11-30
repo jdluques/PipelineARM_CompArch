@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Wed Nov 27 17:16:40 2024
-| Host         : Fabrizzio running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2024.1.1 (win64) Build 5094488 Fri Jun 14 08:59:21 MDT 2024
+| Date         : Fri Nov 29 21:53:36 2024
+| Host         : Fabrizzio-PC running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
 | Device       : xc7a35t
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |     5 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    10 |
+| Unused register locations in slices containing registers |    16 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -59,10 +59,10 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |              20 |            5 |
-| No           | No                    | Yes                    |             210 |           68 |
+| No           | No                    | Yes                    |             212 |           79 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |              32 |           19 |
+| Yes          | No                    | Yes                    |              32 |           15 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,14 +70,14 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+---------------------------+------------------+------------------+----------------+--------------+
-|  Clock Signal  |       Enable Signal       | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------+---------------------------+------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG |                           |                  |                5 |             20 |         4.00 |
-|  clk_IBUF_BUFG |                           | reset_IBUF       |                7 |             27 |         3.86 |
-|  slow_clk_BUFG | arm_inst/dp/instrreg/E[0] | reset_IBUF       |               19 |             32 |         1.68 |
-| ~slow_clk_BUFG | arm_inst/c/regsW/Q[1]     |                  |               11 |             88 |         8.00 |
-|  slow_clk_BUFG |                           | reset_IBUF       |               61 |            183 |         3.00 |
-+----------------+---------------------------+------------------+------------------+----------------+--------------+
++----------------+--------------------------------+------------------+------------------+----------------+--------------+
+|  Clock Signal  |          Enable Signal         | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+--------------------------------+------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG |                                |                  |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG |                                | reset_IBUF       |                7 |             27 |         3.86 |
+|  slow_clk_BUFG | arm_inst/dp/instrreg/E[0]      | reset_IBUF       |               15 |             32 |         2.13 |
+| ~slow_clk_BUFG | arm_inst/c/regsW/q_reg[1]_0[1] |                  |               11 |             88 |         8.00 |
+|  slow_clk_BUFG |                                | reset_IBUF       |               72 |            185 |         2.57 |
++----------------+--------------------------------+------------------+------------------+----------------+--------------+
 
 
