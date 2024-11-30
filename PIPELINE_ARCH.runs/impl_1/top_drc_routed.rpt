@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1.1 (win64) Build 5094488 Fri Jun 14 08:59:21 MDT 2024
-| Date         : Sat Nov 30 00:11:13 2024
+| Date         : Sat Nov 30 18:32:09 2024
 | Host         : Fabrizzio-PC running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_drc_routed.rpt -pb top_drc_routed.pb -rpx top_drc_routed.rpx
 | Design       : top
@@ -24,12 +24,125 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 0
-+------+----------+-------------+------------+
-| Rule | Severity | Description | Violations |
-+------+----------+-------------+------------+
-+------+----------+-------------+------------+
+             Violations found: 22
++-----------+----------+----------------------------+------------+
+| Rule      | Severity | Description                | Violations |
++-----------+----------+----------------------------+------------+
+| CHECK-3   | Warning  | Report rule limit reached  | 1          |
+| RBOR-1    | Warning  | RAMB output registers      | 1          |
+| REQP-1840 | Warning  | RAMB18 async control check | 20         |
++-----------+----------+----------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+CHECK-3#1 Warning
+Report rule limit reached  
+REQP-1840 rule limit reached: 20 violations have been found.
+Related violations: <none>
+
+RBOR-1#1 Warning
+RAMB output registers  
+RAMB dmem_inst/RAM_reg output DOA (18) DOB (14) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+REQP-1840#1 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ADDRARDADDR[10] (net: dmem_inst/Q[6]) which is driven by a register (arm_inst/dp/aluresreg/q_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#2 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ADDRARDADDR[11] (net: dmem_inst/Q[7]) which is driven by a register (arm_inst/dp/aluresreg/q_reg[9]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#3 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ADDRARDADDR[4] (net: dmem_inst/Q[0]) which is driven by a register (arm_inst/dp/aluresreg/q_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#4 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ADDRARDADDR[5] (net: dmem_inst/Q[1]) which is driven by a register (arm_inst/dp/aluresreg/q_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#5 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ADDRARDADDR[6] (net: dmem_inst/Q[2]) which is driven by a register (arm_inst/dp/aluresreg/q_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#6 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ADDRARDADDR[7] (net: dmem_inst/Q[3]) which is driven by a register (arm_inst/dp/aluresreg/q_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#7 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ADDRARDADDR[8] (net: dmem_inst/Q[4]) which is driven by a register (arm_inst/dp/aluresreg/q_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#8 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ADDRARDADDR[9] (net: dmem_inst/Q[5]) which is driven by a register (arm_inst/dp/aluresreg/q_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#9 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ADDRBWRADDR[10] (net: dmem_inst/Q[6]) which is driven by a register (arm_inst/dp/aluresreg/q_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#10 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ADDRBWRADDR[11] (net: dmem_inst/Q[7]) which is driven by a register (arm_inst/dp/aluresreg/q_reg[9]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#11 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ADDRBWRADDR[4] (net: dmem_inst/Q[0]) which is driven by a register (arm_inst/dp/aluresreg/q_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#12 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ADDRBWRADDR[5] (net: dmem_inst/Q[1]) which is driven by a register (arm_inst/dp/aluresreg/q_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#13 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ADDRBWRADDR[6] (net: dmem_inst/Q[2]) which is driven by a register (arm_inst/dp/aluresreg/q_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#14 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ADDRBWRADDR[7] (net: dmem_inst/Q[3]) which is driven by a register (arm_inst/dp/aluresreg/q_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#15 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ADDRBWRADDR[8] (net: dmem_inst/Q[4]) which is driven by a register (arm_inst/dp/aluresreg/q_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#16 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ADDRBWRADDR[9] (net: dmem_inst/Q[5]) which is driven by a register (arm_inst/dp/aluresreg/q_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#17 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ENARDEN (net: dmem_inst/RAM_reg_ENARDEN_cooolgate_en_sig_1) which is driven by a register (arm_inst/c/flushedregsE/q_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#18 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ENARDEN (net: dmem_inst/RAM_reg_ENARDEN_cooolgate_en_sig_1) which is driven by a register (arm_inst/c/regsM/q_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#19 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ENBWREN (net: dmem_inst/RAM_reg_ENBWREN_cooolgate_en_sig_2) which is driven by a register (arm_inst/c/flushedregsE/q_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#20 Warning
+RAMB18 async control check  
+The RAMB18E1 dmem_inst/RAM_reg has an input control pin dmem_inst/RAM_reg/ENBWREN (net: dmem_inst/RAM_reg_ENBWREN_cooolgate_en_sig_2) which is driven by a register (arm_inst/c/regsM/q_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
 
