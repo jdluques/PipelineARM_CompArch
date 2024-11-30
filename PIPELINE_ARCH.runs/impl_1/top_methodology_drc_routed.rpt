@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1.1 (win64) Build 5094488 Fri Jun 14 08:59:21 MDT 2024
-| Date         : Fri Nov 29 22:21:10 2024
+| Date         : Sat Nov 30 00:11:14 2024
 | Host         : Fabrizzio-PC running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
 | Design       : top
@@ -460,47 +460,47 @@ Related violations: <none>
 
 TIMING-17#86 Critical Warning
 Non-clocked sequential cell  
-The clock pin arm_inst/dp/immreg/q_reg[15]/C is not reached by a timing clock
+The clock pin arm_inst/dp/immreg/q_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#87 Critical Warning
 Non-clocked sequential cell  
-The clock pin arm_inst/dp/immreg/q_reg[18]/C is not reached by a timing clock
+The clock pin arm_inst/dp/immreg/q_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#88 Critical Warning
 Non-clocked sequential cell  
-The clock pin arm_inst/dp/immreg/q_reg[1]/C is not reached by a timing clock
+The clock pin arm_inst/dp/immreg/q_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#89 Critical Warning
 Non-clocked sequential cell  
-The clock pin arm_inst/dp/immreg/q_reg[22]/C is not reached by a timing clock
+The clock pin arm_inst/dp/immreg/q_reg[25]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#90 Critical Warning
 Non-clocked sequential cell  
-The clock pin arm_inst/dp/immreg/q_reg[25]/C is not reached by a timing clock
+The clock pin arm_inst/dp/immreg/q_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#91 Critical Warning
 Non-clocked sequential cell  
-The clock pin arm_inst/dp/immreg/q_reg[2]/C is not reached by a timing clock
+The clock pin arm_inst/dp/immreg/q_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#92 Critical Warning
 Non-clocked sequential cell  
-The clock pin arm_inst/dp/immreg/q_reg[3]/C is not reached by a timing clock
+The clock pin arm_inst/dp/immreg/q_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#93 Critical Warning
 Non-clocked sequential cell  
-The clock pin arm_inst/dp/immreg/q_reg[4]/C is not reached by a timing clock
+The clock pin arm_inst/dp/immreg/q_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#94 Critical Warning
 Non-clocked sequential cell  
-The clock pin arm_inst/dp/immreg/q_reg[5]/C is not reached by a timing clock
+The clock pin arm_inst/dp/immreg/q_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#95 Critical Warning

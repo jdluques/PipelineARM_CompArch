@@ -3,8 +3,8 @@
 # SW Build 5094488 on Fri Jun 14 08:59:21 MDT 2024
 # IP Build 5091682 on Fri Jun 14 16:55:04 MDT 2024
 # SharedData Build 5094118 on Fri Jun 14 01:09:43 MDT 2024
-# Start of session at: Fri Nov 29 22:04:32 2024
-# Process ID: 569368
+# Start of session at: Sat Nov 30 00:10:43 2024
+# Process ID: 622572
 # Current directory: C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.runs/impl_1
 # Command line: vivado.exe -log top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top.tcl -notrace
 # Log file: C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.runs/impl_1/top.vdi
@@ -19,6 +19,6 @@
 # Host memory       :33519 MB
 # Swap memory       :20401 MB
 # Total Virtual     :53920 MB
-# Available Virtual :12797 MB
+# Available Virtual :12015 MB
 #-----------------------------------------------------------
 source top.tcl -notrace

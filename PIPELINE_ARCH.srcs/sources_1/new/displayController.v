@@ -1,6 +1,7 @@
 module DisplayController (
     input wire clk,
-    input wire [15:0] display_value,
+    input wire [15:0] display_value_1,
+    input wire [15:0] display_value_2,
     output reg [3:0] an,
     output reg [6:0] seg
 );
@@ -16,11 +17,11 @@ module DisplayController (
 
   always @(*) begin
     case (active_digit)
-      2'b00:   digit = display_value[3:0];
-      2'b01:   digit = display_value[7:4];
-      2'b10:   digit = display_value[11:8];
-      2'b11:   digit = display_value[15:12];
-      default: digit = display_value[3:0];
+      2'b00:   digit = display_value_1[3:0];
+      2'b01:   digit = display_value_1[7:4];
+      2'b10:   digit = display_value_2[3:0];
+      2'b11:   digit = display_value_2[7:4];
+      default: digit = display_value_1[3:0];
     endcase
   end
 

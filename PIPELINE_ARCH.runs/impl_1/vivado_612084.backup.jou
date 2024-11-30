@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1.1 (64-bit)
+# SW Build 5094488 on Fri Jun 14 08:59:21 MDT 2024
+# IP Build 5091682 on Fri Jun 14 16:55:04 MDT 2024
+# SharedData Build 5094118 on Fri Jun 14 01:09:43 MDT 2024
+# Start of session at: Fri Nov 29 23:58:39 2024
+# Process ID: 612084
+# Current directory: C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.runs/impl_1
+# Command line: vivado.exe -log top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top.tcl -notrace
+# Log file: C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.runs/impl_1/top.vdi
+# Journal file: C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.runs/impl_1\vivado.jou
+# Running On        :Fabrizzio-PC
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22631
+# Processor Detail  :AMD Ryzen 9 7900X 12-Core Processor            
+# CPU Frequency     :4700 MHz
+# CPU Physical cores:12
+# CPU Logical cores :24
+# Host memory       :33519 MB
+# Swap memory       :20401 MB
+# Total Virtual     :53920 MB
+# Available Virtual :12240 MB
+#-----------------------------------------------------------
+source top.tcl -notrace

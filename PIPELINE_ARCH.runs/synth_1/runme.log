@@ -8,7 +8,7 @@
   **** SW Build 5094488 on Fri Jun 14 08:59:21 MDT 2024
   **** IP Build 5091682 on Fri Jun 14 16:55:04 MDT 2024
   **** SharedData Build 5094118 on Fri Jun 14 01:09:43 MDT 2024
-  **** Start of session at: Fri Nov 29 22:19:48 2024
+  **** Start of session at: Sat Nov 30 00:10:01 2024
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -26,9 +26,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 569396
+INFO: [Synth 8-7075] Helper process launched with PID 622488
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1386.012 ; gain = 449.633
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1386.484 ; gain = 449.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/top.v:1]
 INFO: [Synth 8-6157] synthesizing module 'arm' [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/arm.v:1]
@@ -97,19 +97,34 @@ INFO: [Synth 8-6155] done synthesizing module 'datapath' (0#1) [C:/Users/vilch/O
 INFO: [Synth 8-6157] synthesizing module 'hazard' [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/hazard.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'hazard' (0#1) [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/hazard.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'arm' (0#1) [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/arm.v:1]
-WARNING: [Synth 8-7071] port 'sh' of module 'arm' is unconnected for instance 'arm_inst' [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/top.v:26]
-WARNING: [Synth 8-7023] instance 'arm_inst' of module 'arm' has 9 connections declared, but only 8 given [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/top.v:26]
+WARNING: [Synth 8-7071] port 'sh' of module 'arm' is unconnected for instance 'arm_inst' [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/top.v:25]
+WARNING: [Synth 8-7023] instance 'arm_inst' of module 'arm' has 9 connections declared, but only 8 given [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/top.v:25]
 INFO: [Synth 8-6157] synthesizing module 'imem' [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/imem.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'imem' (0#1) [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/imem.v:1]
 INFO: [Synth 8-6157] synthesizing module 'dmem' [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/dmem.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'dmem' (0#1) [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/dmem.v:1]
 INFO: [Synth 8-6157] synthesizing module 'DisplayController' [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/displayController.v:1]
-INFO: [Synth 8-226] default block is never used [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/displayController.v:18]
-INFO: [Synth 8-226] default block is never used [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/displayController.v:28]
-INFO: [Synth 8-226] default block is never used [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/displayController.v:38]
+INFO: [Synth 8-226] default block is never used [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/displayController.v:19]
+INFO: [Synth 8-226] default block is never used [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/displayController.v:29]
+INFO: [Synth 8-226] default block is never used [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/displayController.v:39]
 INFO: [Synth 8-6155] done synthesizing module 'DisplayController' (0#1) [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/displayController.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/top.v:1]
-WARNING: [Synth 8-3848] Net DataAdrM in module/entity top does not have driver. [C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/top.v:11]
+WARNING: [Synth 8-7129] Port display_value_1[15] in module DisplayController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_value_1[14] in module DisplayController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_value_1[13] in module DisplayController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_value_1[12] in module DisplayController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_value_1[11] in module DisplayController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_value_1[10] in module DisplayController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_value_1[9] in module DisplayController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_value_1[8] in module DisplayController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_value_2[15] in module DisplayController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_value_2[14] in module DisplayController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_value_2[13] in module DisplayController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_value_2[12] in module DisplayController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_value_2[11] in module DisplayController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_value_2[10] in module DisplayController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_value_2[9] in module DisplayController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_value_2[8] in module DisplayController is either unconnected or has no load
 WARNING: [Synth 8-7129] Port clk in module hazard is either unconnected or has no load
 WARNING: [Synth 8-7129] Port reset in module hazard is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ALUControl[4] in module alu is either unconnected or has no load
@@ -132,18 +147,18 @@ WARNING: [Synth 8-7129] Port InstrD[2] in module controller is either unconnecte
 WARNING: [Synth 8-7129] Port InstrD[1] in module controller is either unconnected or has no load
 WARNING: [Synth 8-7129] Port InstrD[0] in module controller is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1500.312 ; gain = 563.934
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1501.070 ; gain = 563.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1500.312 ; gain = 563.934
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1501.070 ; gain = 563.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1500.312 ; gain = 563.934
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1501.070 ; gain = 563.586
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1500.312 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1501.070 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -154,28 +169,28 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1615.902 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1597.680 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1615.902 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1597.680 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1615.902 ; gain = 679.523
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1597.680 ; gain = 660.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1615.902 ; gain = 679.523
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1597.680 ; gain = 660.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1615.902 ; gain = 679.523
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1597.680 ; gain = 660.195
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'branchP'
 ---------------------------------------------------------------------------------------------------
@@ -188,7 +203,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'branc
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'branchP'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1615.902 ; gain = 679.523
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1597.680 ; gain = 660.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -241,7 +256,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 1615.902 ; gain = 679.523
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1597.680 ; gain = 660.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -262,13 +277,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1615.902 ; gain = 679.523
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1597.680 ; gain = 660.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1615.902 ; gain = 679.523
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1597.680 ; gain = 660.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -288,7 +303,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1615.902 ; gain = 679.523
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1597.680 ; gain = 660.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -306,37 +321,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 1615.902 ; gain = 679.523
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1597.680 ; gain = 660.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 1615.902 ; gain = 679.523
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1597.680 ; gain = 660.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 1615.902 ; gain = 679.523
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1597.680 ; gain = 660.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 1615.902 ; gain = 679.523
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1597.680 ; gain = 660.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 1615.902 ; gain = 679.523
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1597.680 ; gain = 660.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 1615.902 ; gain = 679.523
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1597.680 ; gain = 660.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -368,29 +383,29 @@ Report Cell Usage:
 |14    |OBUF     |    11|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 1615.902 ; gain = 679.523
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1597.680 ; gain = 660.195
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:19 . Memory (MB): peak = 1615.902 ; gain = 563.934
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 1615.902 ; gain = 679.523
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 1597.680 ; gain = 563.586
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1597.680 ; gain = 660.195
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1615.902 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1597.680 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 43 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 14 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1615.902 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1597.680 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 14 instances were transformed.
   RAM32M => RAM32M (inverted pins: WCLK) (RAMD32(x6), RAMS32(x2)): 10 instances
   RAM32X1D => RAM32X1D (inverted pins: WCLK) (RAMD32(x2)): 4 instances
 
-Synth Design complete | Checksum: ecc921a6
+Synth Design complete | Checksum: 428a0d35
 INFO: [Common 17-83] Releasing license: Synthesis
-85 Infos, 27 Warnings, 0 Critical Warnings and 0 Errors encountered.
+85 Infos, 42 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:24 . Memory (MB): peak = 1615.902 ; gain = 1073.016
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1615.902 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 1597.680 ; gain = 1054.449
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1597.680 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.runs/synth_1/top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Nov 29 22:20:18 2024...
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 30 00:10:29 2024...
