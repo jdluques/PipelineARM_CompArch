@@ -9,8 +9,9 @@ _start:
 		BGT FOR
 		
 	ADD R2, R0, #2
-	ADD R0, R0, #0x40
+	ADD R0, R0, #12
 	
-	STR R2, [R0]
-	LDR R3, [R0]
+	STR R2, [R0, #84]
+	LDR R3, [R0, #84]
+	
 	
