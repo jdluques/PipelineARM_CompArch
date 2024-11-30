@@ -1,0 +1,7 @@
+	SUB R0, R15, R15
+	ADD R1, R0, #5
+	
+	FOR:
+		SUB R1, R1, #1
+		SUBS R1, R1, #0
+		BGT FOR
