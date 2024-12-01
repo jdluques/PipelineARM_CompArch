@@ -68,7 +68,7 @@ module controller (
       case (InstrD[25])
         1'b1: controlsD = 11'b00001010010;
         1'b0:
-        if (InstrD[24:21] == 4'b1101) controlsD = 11'b00000011011;
+        if (InstrD[24:21] == 4'b1101) controlsD = 11'b00000010011;
         else controlsD = 11'b00000010010;
       endcase
       2'b01:
