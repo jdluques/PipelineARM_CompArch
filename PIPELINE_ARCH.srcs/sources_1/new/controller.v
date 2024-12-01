@@ -87,6 +87,8 @@ module controller (
         4'b0000: ALUControlD = 5'b00010;
         4'b1100: ALUControlD = 5'b00011;
         4'b1101: ALUControlD = 5'b00100;
+        4'b1000: ALUControlD = 5'b01001;
+        4'b1001: ALUControlD = 5'b01010;
         default: ALUControlD = 5'bxxxxx;
       endcase
       FlagWriteD[1] = InstrD[20];

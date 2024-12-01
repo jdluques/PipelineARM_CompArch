@@ -23,6 +23,7 @@ module alu (
       5'b0000x: Result = sum;
       5'b00010: Result = a & b;
       5'b00011: Result = a | b;
+      5'b01001: Result = a ^ b;
       5'b00100: Result = b;
     endcase
   end

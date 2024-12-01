@@ -34,7 +34,7 @@ module DisplayController (
       default: an = 4'b1110;
     endcase
   end
-  
+
   always @(*) begin
     case (digit)
       4'h0: seg = 7'b1000000;  // '0'
