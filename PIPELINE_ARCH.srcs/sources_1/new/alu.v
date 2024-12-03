@@ -18,6 +18,9 @@ module alu (
   wire [32:0] sum;
   assign condinvb = (ALUControl[0] ? ~b : b);
   assign sum = (a + condinvb) + ALUControl[0];
+  // ------------- //
+  reg [31:0] extA; 
+  reg [31:0] extB; 
   always @(*) begin
     casex (ALUControl[1:0])
       5'b0000x: Result = sum;
