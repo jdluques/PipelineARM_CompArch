@@ -1,40 +1,10 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="vilch" Host="FABRIZZIO-PC" Pid="673948" HostCore="24" HostMemory="033519599616">
+    <Process Command="vivado.bat" Owner="vilch" Host="FABRIZZIO-PC" Pid="225020" HostCore="24" HostMemory="033519599616">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="vilch" Host="FABRIZZIO-PC" Pid="680020" HostCore="24" HostMemory="033519599616">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="vilch" Host="FABRIZZIO-PC" Pid="679484" HostCore="24" HostMemory="033519599616">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="vilch" Host="FABRIZZIO-PC" Pid="681416" HostCore="24" HostMemory="033519599616">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="vilch" Host="FABRIZZIO-PC" Pid="686268" HostCore="24" HostMemory="033519599616">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="vilch" Host="FABRIZZIO-PC" Pid="684356" HostCore="24" HostMemory="033519599616">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="vilch" Host="FABRIZZIO-PC" Pid="694840" HostCore="24" HostMemory="033519599616">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="vilch" Host="FABRIZZIO-PC" Pid="689240" HostCore="24" HostMemory="033519599616">
+    <Process Command="vivado.bat" Owner="vilch" Host="FABRIZZIO-PC" Pid="216676" HostCore="24" HostMemory="033519599616">
     </Process>
 </ProcessHandle>
