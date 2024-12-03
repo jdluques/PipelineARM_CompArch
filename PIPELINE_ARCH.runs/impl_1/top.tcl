@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.runs/impl_1/top.tcl"
+  variable script "C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.runs/impl_1/top.tcl"
   variable category "vivado_impl"
 }
 
@@ -105,10 +105,10 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_param chipscope.maxJobs 6
-  set_param runs.launchOptions { -jobs 12  }
+  set_param chipscope.maxJobs 1
+  set_param runs.launchOptions { -jobs 6  }
   open_checkpoint top_routed.dcp
-  set_property webtalk.parent_dir C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.cache/wt [current_project]
+  set_property webtalk.parent_dir C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.cache/wt [current_project]
 set_property TOP top [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }

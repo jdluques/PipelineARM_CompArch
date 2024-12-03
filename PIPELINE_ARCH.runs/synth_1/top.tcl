@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.runs/synth_1/top.tcl"
+  variable script "C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.runs/synth_1/top.tcl"
   variable category "vivado_synth"
 }
 
@@ -62,39 +62,39 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.cache/wt [current_project]
-set_property parent.project_path C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.cache/wt [current_project]
+set_property parent.project_path C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property board_part_repo_paths {C:/Users/vilch/AppData/Roaming/Xilinx/Vivado/2024.1.1/xhub/board_store/xilinx_board_store} [current_project]
+set_property board_part_repo_paths {C:/Users/vilch/AppData/Roaming/Xilinx/Vivado/2024.1/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.2 [current_project]
-set_property ip_output_repo c:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.cache/ip [current_project]
+set_property ip_output_repo c:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/Bpredictor.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/adder.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/alu.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/arm.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/conditional.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/controller.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/datapath.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/displayController.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/dmem.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/eqcmp.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/extend.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/flopenr.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/flopenrc.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/flopr.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/floprc.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/hazard.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/imem.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/mux2.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/mux3.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/regfile.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/shift.v
-  C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/top.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/Bpredictor.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/adder.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/alu.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/arm.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/conditional.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/controller.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/datapath.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/displayController.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/dmem.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/eqcmp.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/extend.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/flopenr.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/flopenrc.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/flopr.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/floprc.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/hazard.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/imem.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/mux2.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/mux3.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/regfile.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/shift.v
+  C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/sources_1/new/top.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -105,12 +105,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/constrs_1/new/const.xdc
-set_property used_in_implementation false [get_files C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/constrs_1/new/const.xdc]
+read_xdc C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/constrs_1/new/const.xdc
+set_property used_in_implementation false [get_files C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/constrs_1/new/const.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.srcs/utils_1/imports/synth_1/top.dcp
+read_checkpoint -auto_incremental -incremental C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.srcs/utils_1/imports/synth_1/top.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

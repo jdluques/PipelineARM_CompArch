@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.runs/synth_1'
+HD_PWD='C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

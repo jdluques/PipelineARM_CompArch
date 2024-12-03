@@ -1,24 +1,24 @@
 #-----------------------------------------------------------
-# Vivado v2024.1.1 (64-bit)
-# SW Build 5094488 on Fri Jun 14 08:59:21 MDT 2024
-# IP Build 5091682 on Fri Jun 14 16:55:04 MDT 2024
-# SharedData Build 5094118 on Fri Jun 14 01:09:43 MDT 2024
-# Start of session at: Tue Dec  3 10:32:07 2024
-# Process ID: 228640
-# Current directory: C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.runs/synth_1
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Tue Dec  3 15:46:56 2024
+# Process ID: 5712
+# Current directory: C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.runs/synth_1/top.vds
-# Journal file: C:/Users/vilch/OneDrive/Escritorio/PipelineARM_CompArch/PIPELINE_ARCH.runs/synth_1\vivado.jou
-# Running On        :Fabrizzio-PC
+# Log file: C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.runs/synth_1/top.vds
+# Journal file: C:/Users/vilch/Desktop/final/PipelineARM_CompArch/PIPELINE_ARCH.runs/synth_1\vivado.jou
+# Running On        :Fabrizzio
 # Platform          :Windows Server 2016 or Windows 10
 # Operating System  :22631
-# Processor Detail  :AMD Ryzen 9 7900X 12-Core Processor            
-# CPU Frequency     :4700 MHz
-# CPU Physical cores:12
-# CPU Logical cores :24
-# Host memory       :33519 MB
-# Swap memory       :20401 MB
-# Total Virtual     :53920 MB
-# Available Virtual :24411 MB
+# Processor Detail  :AMD Ryzen 5 4500U with Radeon Graphics         
+# CPU Frequency     :2371 MHz
+# CPU Physical cores:6
+# CPU Logical cores :6
+# Host memory       :16492 MB
+# Swap memory       :4831 MB
+# Total Virtual     :21324 MB
+# Available Virtual :4883 MB
 #-----------------------------------------------------------
 source top.tcl -notrace

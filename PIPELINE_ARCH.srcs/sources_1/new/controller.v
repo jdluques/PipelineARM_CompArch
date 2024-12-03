@@ -68,7 +68,7 @@ module controller (
       case (InstrD[25])
         1'b1: controlsD = 11'b00001010010;
         1'b0:
-        if (InstrD[24:21] == 4'b1101) controlsD = 11'b00000011011;
+        if (InstrD[24:21] == 4'b1101) controlsD = 11'b00000010011;
         else controlsD = 11'b00000010010;
       endcase
       2'b01:
@@ -86,8 +86,18 @@ module controller (
         4'b0010: ALUControlD = 5'b00001;
         4'b0000: ALUControlD = 5'b00010;
         4'b1100: ALUControlD = 5'b00011;
+        // MOV  //
         4'b1101: ALUControlD = 5'b00100;
+        //  DIV //
+        4'b0011: ALUControlD = 5'b00101;
+        4'b0101: ALUControlD = 5'b00110;
+        //  SUB //
+        4'b0110: ALUControlD = 5'b00111;
+        //  MUL   //
+        4'b0111: ALUControlD = 5'b01000;
+        //XOR
         4'b1000: ALUControlD = 5'b01001;
+        //XNOR
         4'b1001: ALUControlD = 5'b01010;
         default: ALUControlD = 5'bxxxxx;
       endcase

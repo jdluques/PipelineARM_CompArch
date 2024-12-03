@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2024.1.1 (win64) Build 5094488 Fri Jun 14 08:59:21 MDT 2024
-| Date         : Tue Dec  3 10:33:36 2024
-| Host         : Fabrizzio-PC running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Tue Dec  3 15:49:32 2024
+| Host         : Fabrizzio running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
 | Device       : xc7a35t
@@ -59,10 +59,10 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |              20 |            5 |
-| No           | No                    | Yes                    |             269 |           91 |
+| No           | No                    | Yes                    |             269 |           86 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |              47 |           24 |
+| Yes          | No                    | Yes                    |              47 |           25 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -73,12 +73,12 @@ Table of Contents
 +----------------+------------------------------------+------------------+------------------+----------------+--------------+
 |  Clock Signal  |            Enable Signal           | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
 +----------------+------------------------------------+------------------+------------------+----------------+--------------+
-|  slow_clk_BUFG | arm_inst/dp/instrreg/q_reg[1]_0[0] | reset_IBUF       |                5 |             15 |         3.00 |
+|  slow_clk_BUFG | arm_inst/dp/instrreg/q_reg[1]_0[0] | reset_IBUF       |                4 |             15 |         3.75 |
 |  clk_IBUF_BUFG |                                    |                  |                5 |             20 |         4.00 |
 |  clk_IBUF_BUFG |                                    | reset_IBUF       |                7 |             27 |         3.86 |
-|  slow_clk_BUFG | arm_inst/dp/instrreg/E[0]          | reset_IBUF       |               19 |             32 |         1.68 |
+|  slow_clk_BUFG | arm_inst/dp/instrreg/E[0]          | reset_IBUF       |               21 |             32 |         1.52 |
 | ~slow_clk_BUFG | arm_inst/c/regsW/q_reg[2]_0[1]     |                  |               11 |             88 |         8.00 |
-|  slow_clk_BUFG |                                    | reset_IBUF       |               84 |            242 |         2.88 |
+|  slow_clk_BUFG |                                    | reset_IBUF       |               79 |            242 |         3.06 |
 +----------------+------------------------------------+------------------+------------------+----------------+--------------+
 
 
